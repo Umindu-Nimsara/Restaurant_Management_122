@@ -34,15 +34,12 @@ cd ..
 
 ## 🌿 Branch Strategy (වැදගත්!)
 
-හැම module එකකටම වෙනම branch එකක් තියෙනවා:
+Project එකේ branches:
 - `main` - Production ready code (merge කරපු code)
-- `dashboard` - Dashboard module
-- `menu-management` - Menu module
-- `inventory-management` - Inventory module
-- `order-management` - Order module
-- `supplier-management` - Supplier module
-- `user-management` - User module
-- `table-management` - Table module
+- `dashboard` - Dashboard module (Umindu's part)
+- `menu-management` - Menu Management module (Umindu's part)
+
+**Note:** අනිත් modules (inventory, order, supplier, etc.) main branch එකේම වැඩ කරන්න පුළුවන්.
 
 ---
 
@@ -50,21 +47,22 @@ cd ..
 
 ### 1️⃣ ඔයාගේ Branch එකට Switch වෙන්න
 
+**Dashboard හෝ Menu Management වැඩ කරනවා නම්:**
 ```bash
 # Dashboard module නම්
 git checkout dashboard
 
 # Menu module නම්
 git checkout menu-management
-
-# Inventory module නම්
-git checkout inventory-management
-
-# Order module නම්
-git checkout order-management
 ```
 
-**Branch එක නැත්නම් හදන්න:**
+**අනිත් modules (Inventory, Order, Supplier, etc.) නම්:**
+```bash
+# Main branch එකේම වැඩ කරන්න
+git checkout main
+```
+
+**Branch එක නැත්නම් හදන්න (Dashboard/Menu විතරක්):**
 ```bash
 # Dashboard branch එකක් හදන්න
 git checkout -b dashboard
@@ -75,11 +73,17 @@ git checkout -b menu-management
 
 ### 2️⃣ Latest Changes ගන්න
 
+**Dashboard/Menu branches නම්:**
 ```bash
 # ඔයාගේ branch එකේ latest changes
 git pull origin dashboard
+# හෝ
+git pull origin menu-management
+```
 
-# Main එකේ changes ගන්න (optional)
+**අනිත් modules නම්:**
+```bash
+# Main branch එකේ latest changes
 git pull origin main
 ```
 
@@ -110,27 +114,35 @@ git add .
 git commit -m "Dashboard analytics update කළා"
 ```
 
-### 7️⃣ ඔයාගේ Branch එකට Push කරන්න
+### 7️⃣ Push කරන්න
 
+**Dashboard/Menu modules නම්:**
 ```bash
 # Dashboard branch එකට
 git push origin dashboard
 
 # Menu branch එකට
 git push origin menu-management
-
-# Inventory branch එකට
-git push origin inventory-management
 ```
 
-### 8️⃣ Pull Request හදන්න (GitHub එකේ)
+**අනිත් modules නම්:**
+```bash
+# Main branch එකට directly
+git push origin main
+```
 
+### 8️⃣ Pull Request හදන්න (Dashboard/Menu විතරක්)
+
+**Dashboard හෝ Menu module නම් විතරක්:**
 1. GitHub repository එකට යන්න
 2. "Compare & pull request" button එක click කරන්න
 3. Title එකක් දෙන්න: "Dashboard module completed"
 4. Description එකක් ලියන්න
 5. "Create pull request" click කරන්න
 6. Team lead කෙනෙක් review කරලා merge කරයි
+
+**අනිත් modules නම්:**
+Pull request එකක් ඕන නැහැ - directly main එකට push වෙනවා.
 
 ---
 
